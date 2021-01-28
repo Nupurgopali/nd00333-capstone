@@ -11,20 +11,14 @@ from azureml.core.run import Run
 from azureml.data.dataset_factory import TabularDatasetFactory
 from azureml.core import Dataset
 from azureml.core import Experiment, Workspace
+from azureml.core import Workspace, Dataset
 
 
 run = Run.get_context()
-# azureml-core of version 1.0.72 or higher is required
-# azureml-dataprep[pandas] of version 1.1.34 or higher is required
-from azureml.core import Workspace, Dataset
 
-subscription_id = '510b94ba-e453-4417-988b-fbdc37b55ca7'
-resource_group = 'aml-quickstarts-136286'
-workspace_name = 'quick-starts-ws-136286'
 
-workspace = Workspace(subscription_id, resource_group, workspace_name)
-
-dataset = Dataset.get_by_name(workspace, name='cancer')
+ws = run.experiment.workspace
+dataset = Dataset.get_by_name(ws, name='cancer')
 df=dataset.to_pandas_dataframe()
 
 
@@ -36,7 +30,7 @@ def clean_data(data):
     return x_df,y_df
     
 
-x, y = clean_data(ds)
+x, y = clean_data(df)
 x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.2)
 
 def main():
