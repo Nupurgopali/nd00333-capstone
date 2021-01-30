@@ -43,6 +43,8 @@ From the automl run, the best model for the given problem was voting ensemble wi
 
 ### Best Model
 ![image](https://user-images.githubusercontent.com/53776611/106358196-88d25d80-6330-11eb-8c47-dae2e5d2a274.png)
+![image](https://user-images.githubusercontent.com/53776611/106359431-c63ae900-6338-11eb-8cfd-4054f5ce84fd.png)
+
 
 
 
@@ -87,6 +89,7 @@ the model response with an output being 1 or 0. 1 means the patient suffers from
 - A working model
 - Demo of the deployed  model
 - Demo of a sample request sent to the endpoint and its response
+### Screen recording link: <i>https://youtu.be/VCPRUfOvY1w</i>
 
 ## Standout Suggestions
 *TODO (Optional):* This is where you can provide information about any standout suggestions that you have attempted.
