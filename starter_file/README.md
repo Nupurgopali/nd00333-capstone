@@ -82,7 +82,7 @@ computational need.It even makes no assumptions about distributions of classes i
 ## Model Deployment
 *TODO*: Give an overview of the deployed model and instructions on how to query the endpoint with a sample input.
 I deployed the automl model and the endpoint of the model is an url.When a json request (which contains all the needed input features and their values) is made to the url,
-the model response with an output being 1 or 0. 1 means the patient suffers from malignant tumour and 0 means the patient suffers from benign tumour.
+the model response with an output being M or B. M means the patient suffers from malignant tumour and B means the patient suffers from benign tumour.
 
 ## Screen Recording
 *TODO* Provide a link to a screen recording of the project in action. Remember that the screencast should demonstrate:
