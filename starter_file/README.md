@@ -5,6 +5,12 @@
 *TODO:* In this project I configured an automl model to identify whether the patient has malignant or benign tumour and then deployed the model to create an endpoint.Apart
 from an automl model I even developed a hyperparameter model using logistic regression that will also classify the same feature as automl model.
 
+Architecture of the model
+
+![image](https://user-images.githubusercontent.com/53776611/106390205-40d53880-640d-11eb-842f-f6e6a7843abe.png)
+
+
+
 ## Project Set Up and Installation
 *OPTIONAL:* If your project has any special installation steps, this is where you should put it. To turn this project into a professional portfolio project, you are encouraged to explain how to set up this project in AzureML.
 
@@ -15,7 +21,15 @@ from an automl model I even developed a hyperparameter model using logistic regr
 patient suffers from Malignant or Benign type of tumour.I found this dataset from kaggle. Link for the data set :<i>https://www.kaggle.com/uciml/breast-cancer-wisconsin-data</i>
 
 ### Task
-*TODO*: Using certain features like radius_mean,texture_mean,perimeter_mean,smoothness,etc. the task is to identify the type of breast cancer the patient is suffering from.
+<p> *TODO*: Using certain features like:</p>
+<li>radius_mean:mean of distances from center to points on the perimeter</li>
+<li>texture_mean:standard deviation of gray-scale values</li>
+<li>perimeter_mean:mean size of the core tumor</li>
+<li>smoothness_mean:mean of local variation in radius lengths</li>
+<li>compactness:mean of perimeter^2 / area - 1.0</li>
+<li>concavity_mean: mean of severity of concave portions of the contour</li>
+<li>concave points :mean for number of concave portions of the contour</li>
+<p>These features are used to identify the type of breast cancer the patient is suffering from.</p>
 
 ### Access
 *TODO*: I am accessing the dataset in the workspace using the get_by_name function from the Dataset library,where the dataset is retrieved from the dataset store using it's name.
@@ -39,10 +53,23 @@ From the automl run, the best model for the given problem was voting ensemble wi
 
 *TODO* Remeber to provide screenshots of the `RunDetails` widget as well as a screenshot of the best model trained with it's parameters.
 ### RunDetails
+The following screenshots show the run details of automl model,with each step being carried out during the run process.Apart from this the screenshots also show the accuracy of each model under automl run.
 ![image](https://user-images.githubusercontent.com/53776611/106358172-650f1780-6330-11eb-8647-b018ed7d9050.png)
+![image](https://user-images.githubusercontent.com/53776611/106388271-c227cd80-6403-11eb-86f7-86623f90b537.png)
+![image](https://user-images.githubusercontent.com/53776611/106388303-dcfa4200-6403-11eb-9cd2-b5364deb0030.png)
+![image](https://user-images.githubusercontent.com/53776611/106388316-eb485e00-6403-11eb-88bb-bb90c70ed802.png)
+![image](https://user-images.githubusercontent.com/53776611/106388333-0024f180-6404-11eb-848a-529b875172cd.png)
+![image](https://user-images.githubusercontent.com/53776611/106388915-965a1700-6406-11eb-8045-9f78bfadfa2c.png)
+
 
 ### Best Model
+These are the screenshots of the best model with it's id and parameters.
+![image](https://user-images.githubusercontent.com/53776611/106388934-ab36aa80-6406-11eb-99dc-808140d908e3.png)
+![image](https://user-images.githubusercontent.com/53776611/106388960-d7eac200-6406-11eb-8add-efdc5def59aa.png)
+![image](https://user-images.githubusercontent.com/53776611/106388978-ef29af80-6406-11eb-900e-60055496d2f5.png)
+
 ![image](https://user-images.githubusercontent.com/53776611/106358196-88d25d80-6330-11eb-8c47-dae2e5d2a274.png)
+
 ![image](https://user-images.githubusercontent.com/53776611/106359431-c63ae900-6338-11eb-8cfd-4054f5ce84fd.png)
 
 
@@ -74,15 +101,35 @@ computational need.It even makes no assumptions about distributions of classes i
 
 *TODO* Remeber to provide screenshots of the `RunDetails` widget as well as a screenshot of the best model trained with it's parameters.
 ### RunDetails
+The following screenshots show the run details of hyperparameter tuning model,with each step being carried out during the run process.
+![image](https://user-images.githubusercontent.com/53776611/106389564-e7b7d580-6409-11eb-950e-8ff00ff590e8.png)
+![image](https://user-images.githubusercontent.com/53776611/106389588-0d44df00-640a-11eb-95b7-ed2bc5be1d11.png)
+
 ![image](https://user-images.githubusercontent.com/53776611/106358568-0e570d00-6333-11eb-9af3-d69e45eb900d.png)
 ### Best Model
+These are the screenshots of the best model with it's id and parameters.
+![image](https://user-images.githubusercontent.com/53776611/106389606-28175380-640a-11eb-8e02-997b115497af.png)
+
 ![image](https://user-images.githubusercontent.com/53776611/106358596-38103400-6333-11eb-985a-d2c3c6ee372f.png)
+![image](https://user-images.githubusercontent.com/53776611/106389624-382f3300-640a-11eb-8493-c8b26697d4c9.png)
+
 
 
 ## Model Deployment
 *TODO*: Give an overview of the deployed model and instructions on how to query the endpoint with a sample input.
 I deployed the automl model and the endpoint of the model is an url.When a json request (which contains all the needed input features and their values) is made to the url,
-the model response with an output being M or B. M means the patient suffers from malignant tumour and B means the patient suffers from benign tumour.
+the model response with an output being 1 or 0. 1 means the patient suffers from malignant tumour and 0 means the patient suffers from benign tumour.
+
+## Consume the deployed model
+To deploy the model I have initially registered the model,configured the model and then deployed it.The endpoint of the model is an URL.
+![image](https://user-images.githubusercontent.com/53776611/106389773-37e36780-640b-11eb-986f-9f837989324f.png)
+
+![image](https://user-images.githubusercontent.com/53776611/106388216-87259a00-6403-11eb-9b19-80e18434b52d.png)
+![image](https://user-images.githubusercontent.com/53776611/106388242-a6242c00-6403-11eb-9415-633bd13977b6.png)
+
+![image](https://user-images.githubusercontent.com/53776611/106388152-2dbd6b00-6403-11eb-94a8-c95f0e4d7db6.png)
+![image](https://user-images.githubusercontent.com/53776611/106388232-973d7980-6403-11eb-9844-b3a6890db231.png)
+
 
 ## Screen Recording
 *TODO* Provide a link to a screen recording of the project in action. Remember that the screencast should demonstrate:
