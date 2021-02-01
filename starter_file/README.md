@@ -64,6 +64,10 @@ The following screenshots show the run details of automl model,with each step be
 
 ### Best Model
 These are the screenshots of the best model with it's id and parameters.
+
+![image](https://user-images.githubusercontent.com/53776611/106479686-99b9d500-64d0-11eb-97a2-dcec790126fc.png)
+![image](https://user-images.githubusercontent.com/53776611/106479775-b2c28600-64d0-11eb-9314-800d3193d5cb.png)
+
 ![image](https://user-images.githubusercontent.com/53776611/106388934-ab36aa80-6406-11eb-99dc-808140d908e3.png)
 ![image](https://user-images.githubusercontent.com/53776611/106388960-d7eac200-6406-11eb-8add-efdc5def59aa.png)
 ![image](https://user-images.githubusercontent.com/53776611/106388978-ef29af80-6406-11eb-900e-60055496d2f5.png)
